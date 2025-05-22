@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,33 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom agro farming colors
+				agrogreen: {
+					50: '#f0f9e8',
+					100: '#dcf0cc',
+					200: '#bee69f',
+					300: '#99d66e',
+					400: '#78c247',
+					500: '#4d9e29',
+					600: '#3b8020',
+					700: '#2e651b',
+					800: '#254f18',
+					900: '#214216',
+					950: '#0f2409',
+				},
+				earth: {
+					50: '#f8f5f1',
+					100: '#ede3d6',
+					200: '#dfc8ad',
+					300: '#cca77d',
+					400: '#bb8c5a',
+					500: '#ab7545',
+					600: '#93603a',
+					700: '#774a32',
+					800: '#633e2d',
+					900: '#533528',
+					950: '#2d1b15',
 				}
 			},
 			borderRadius: {
@@ -84,11 +112,36 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'fade-out': {
+					'0%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+					'100%': {
+						opacity: '0',
+						transform: 'translateY(10px)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.5s ease-out',
+				'fade-out': 'fade-out 0.5s ease-out'
+			},
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
 			}
 		}
 	},
