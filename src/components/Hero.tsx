@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <div className="hero-image w-full min-h-screen relative flex items-center justify-center">
+    <div className="hero-image w-full h-screen relative flex items-center justify-center">
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/30"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-3xl animate-fade-in">
