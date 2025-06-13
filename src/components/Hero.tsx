@@ -5,29 +5,30 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <div className="hero-image w-full h-[600px] relative flex items-center justify-center">
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+    <div className="hero-image w-full min-h-screen relative flex items-center justify-center">
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/30"></div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Sustainable Farming for a Better Tomorrow
+        <div className="max-w-3xl animate-fade-in">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            Fresh from Local Farms to 
+            <span className="text-agrogreen-400"> Your Table</span>
           </h1>
-          <p className="text-xl text-white/90 mb-8">
-            We combine traditional farming wisdom with modern technology to grow healthier crops while preserving our environment.
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl">
+            Discover locally grown produce, handpicked by trusted farmers and delivered fresh to your doorstep.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link 
               to="/services" 
-              className="bg-agrogreen-600 hover:bg-agrogreen-700 text-white font-medium py-3 px-6 rounded-md inline-flex items-center transition-colors"
+              className="bg-agrogreen-600 hover:bg-agrogreen-700 text-white font-medium py-4 px-8 rounded-lg inline-flex items-center justify-center transition-all hover:scale-105"
             >
-              Our Services
+              Explore Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
             <Link 
               to="/contact" 
-              className="bg-white hover:bg-gray-100 text-agrogreen-700 font-medium py-3 px-6 rounded-md inline-flex items-center transition-colors"
+              className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-medium py-4 px-8 rounded-lg inline-flex items-center justify-center transition-all border border-white/20"
             >
-              Contact Us
+              Meet the Farmers
             </Link>
           </div>
         </div>
