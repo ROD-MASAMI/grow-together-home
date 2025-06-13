@@ -1,9 +1,8 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { folder, folderOpen } from 'lucide-react';
+import { Folder, FolderOpen } from 'lucide-react';
 
 const Gallery = () => {
   const [openFolder, setOpenFolder] = useState<string | null>(null);
@@ -96,9 +95,9 @@ const Gallery = () => {
                     <div className="flex items-center space-x-4">
                       <div className="text-agrogreen-600 transition-transform duration-300">
                         {openFolder === folder.id ? (
-                          <folderOpen size={32} />
+                          <FolderOpen size={32} />
                         ) : (
-                          <folder size={32} />
+                          <Folder size={32} />
                         )}
                       </div>
                       <div className="flex-1">
