@@ -4,7 +4,7 @@ pipeline {
     environment {
         BASE_DIR = '/learning'
         PROJECT_NAME = 'grow-together-home'
-        TARGET_DIR = '${BASE_DIR}/${PROJECT_NAME}'
+        TARGET_DIR = ${BASE_DIR}/${PROJECT_NAME}
         REPO_URL = 'https://github.com/ROD-MASAMI/grow-together-home'
     }
 
