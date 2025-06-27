@@ -40,12 +40,6 @@ pipeline {
             }
         }
 
-        stage('Run App') {
-            steps {
 
-                    sh 'npm run start'
-
-            }
-        }
     }
 }
