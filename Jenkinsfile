@@ -2,7 +2,9 @@ pipeline {
     agent any
 
     environment {
-        TARGET_DIR = '/learning'
+        BASE_DIR = '/learning'
+        PROJECT_NAME = 'grow-together-home'
+        TARGET_DIR = "${BASE_DIR}/${PROJECT_NAME}"
         REPO_URL = 'https://github.com/ROD-MASAMI/grow-together-home'
     }
 
@@ -10,14 +12,14 @@ pipeline {
         stage('Prepare Code') {
             steps {
                 sh '''
-                    if [ -d "$TARGET_DIR/.git" ]; then
+                    if [ -d "TARGET_DIR/.git" ]; then
                         echo "Repo exists, pulling latest changes..."
-                        cd $TARGET_DIR
+                        cd TARGET_DIR
                         git pull origin main
                     else
                         echo "Cloning repo for the first time..."
-                        cd $TARGET_DIR
-                        git clone $REPO_URL $TARGET_DIR
+                        cd BASE_DIR
+                        git clone $REPO_URL BASE_DIR
                     fi
                 '''
             }
@@ -25,7 +27,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir("${env.TARGET_DIR}") {
+                dir("${env.BASE_DIR}") {
                     sh 'npm install'
                 }
             }
@@ -33,7 +35,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                dir("${env.TARGET_DIR}") {
+                dir("${env.BASE_DIR}") {
                     sh 'npm run build'
                 }
             }
@@ -41,7 +43,7 @@ pipeline {
 
         stage('Run App') {
             steps {
-                dir("${env.TARGET_DIR}") {
+                dir("${env.BASE_DIR}") {
                     sh 'npm run start'
                 }
             }
