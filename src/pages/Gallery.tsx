@@ -42,29 +42,29 @@ const Gallery = () => {
     {
       id: 'landscapes',
       name: 'Farm Landscapes',
-      description: 'Beautiful views from our fields and plantations',
+      description: 'Beautiful views from our crop plantations',
       preview: 'photo-1472396961693-142e6e269027',
       images: [
-        'photo-1472396961693-142e6e269027', // green fields
-        'photo-1433086966358-54859d0ed716', // mountain landscape
-        'photo-1509316975850-ff9c5deb0cd9', // farmland vista
-        'photo-1469474968028-56623f02e42e', // countryside
-        'photo-1500375592092-40eb2168fd21', // agricultural landscape
-        'photo-1482938289607-e9573fc25ebb' // rural scenery
+        'photo-1472396961693-142e6e269027', // green crop fields
+        'photo-1571019613454-1cb2f99b2d8b', // coffee plantation rows
+        'photo-1574484284002-952d92456975', // corn plantation field
+        'photo-1509316975850-ff9c5deb0cd9', // agricultural plantation
+        'photo-1500375592092-40eb2168fd21', // crop plantation vista
+        'photo-1558618666-fcd25c85cd64' // tea plantation rows
       ]
     },
     {
       id: 'harvest',
       name: 'Crops & Harvest',
-      description: 'Coffee, maize, and fresh produce from our farms',
+      description: 'Fresh crops and farmers collecting produce',
       preview: 'photo-1447175008436-054170c2e979',
       images: [
         'photo-1447175008436-054170c2e979', // coffee beans harvest
-        'photo-1571019613454-1cb2f99b2d8b', // coffee plantation
-        'photo-1574484284002-952d92456975', // corn/maize field
-        'photo-1618160702438-9b02ab6515c9', // harvest basket
-        'photo-1465146344425-f00d5f5c8f07', // fresh vegetables
-        'photo-1518005020951-eccb494ad742' // harvest scene
+        'photo-1574484284002-952d92456975', // corn/maize crop
+        'photo-1445282768818-728615cc910a', // fresh carrots
+        'photo-1559827260-dc66d52bef19', // farmers collecting produce
+        'photo-1574323347407-f5e1ad6d020b', // farmer harvesting crops
+        'photo-1504378874489-7c843fe342d6' // farmer with harvest
       ]
     }
   ];
