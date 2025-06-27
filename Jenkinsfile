@@ -12,7 +12,7 @@ pipeline {
         stage('Prepare Code') {
             steps {
                 sh '''
-                    if [ -d "BASE_DIR/$TARGET_DIR.git" ]; then
+                    if [ -d "BASE_DIR/PROJECT_NAME.git" ]; then
                         echo "Repo exists, pulling latest changes..."
                         cd $TARGET_DIR
                         git pull origin main
