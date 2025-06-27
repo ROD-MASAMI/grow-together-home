@@ -50,7 +50,7 @@ const Contact = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="relative h-80 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&q=80")`
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80")`
       }}>
         <Navbar />
         <div className="absolute inset-0 flex items-center justify-center">
