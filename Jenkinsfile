@@ -16,7 +16,7 @@ pipeline {
                         git pull origin main
                     else
                         echo "Cloning repo for the first time..."
-                        mkdir -p $TARGET_DIR
+                        cd $TARGET_DIR
                         git clone $REPO_URL $TARGET_DIR
                     fi
                 '''
