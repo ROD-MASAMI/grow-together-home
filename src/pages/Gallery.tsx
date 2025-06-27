@@ -15,56 +15,56 @@ const Gallery = () => {
       id: 'farming',
       name: 'Farm Life',
       description: 'Daily life on our sustainable farms',
-      preview: 'photo-1517022812141-23620dba5c23',
+      preview: 'photo-1500937386664-56d1dfef3854',
       images: [
-        'photo-1517022812141-23620dba5c23',
-        'photo-1466721591366-2d5fba72006d',
-        'photo-1493962853295-0fd70327578a',
-        'photo-1452960962994-acf4fd70b632',
-        'photo-1465379944081-7f47de8d74ac',
-        'photo-1439886183900-e79ec0057170'
+        'photo-1500937386664-56d1dfef3854', // rural farm landscape
+        'photo-1574323347407-f5e1ad6d020b', // farmer in field
+        'photo-1476514525535-07fb3b4ae5f1', // farm work scene
+        'photo-1625246333195-78d9c38ad449', // agricultural equipment
+        'photo-1559827260-dc66d52bef19', // farmers working
+        'photo-1504378874489-7c843fe342d6' // farm life
       ]
     },
     {
       id: 'animals',
       name: 'Farm Animals',
       description: 'Our beloved farm animals',
-      preview: 'photo-1582562124811-c09040d0a901',
+      preview: 'photo-1516467508483-a7212febe31a',
       images: [
-        'photo-1582562124811-c09040d0a901',
-        'photo-1535268647677-300dbf3d78d1',
-        'photo-1441057206919-63d19fac2369',
-        'photo-1485833077593-4278bba3f11f',
-        'photo-1438565434616-3ef039228b15',
-        'photo-1452378174528-3090a4bba7b2'
+        'photo-1516467508483-a7212febe31a', // cows in field
+        'photo-1548550023-2bdb3c5beed7', // sheep grazing
+        'photo-1517022812141-23620dba5c23', // sheep herd
+        'photo-1452378174528-3090a4bba7b2', // horses
+        'photo-1582562124811-c09040d0a901', // farm animals
+        'photo-1567459437266-61ba7bd137cd' // cattle
       ]
     },
     {
       id: 'landscapes',
       name: 'Farm Landscapes',
-      description: 'Beautiful views from our fields',
+      description: 'Beautiful views from our fields and plantations',
       preview: 'photo-1472396961693-142e6e269027',
       images: [
-        'photo-1472396961693-142e6e269027',
-        'photo-1433086966358-54859d0ed716',
-        'photo-1482938289607-e9573fc25ebb',
-        'photo-1509316975850-ff9c5deb0cd9',
-        'photo-1469474968028-56623f02e42e',
-        'photo-1500375592092-40eb2168fd21'
+        'photo-1472396961693-142e6e269027', // green fields
+        'photo-1433086966358-54859d0ed716', // mountain landscape
+        'photo-1509316975850-ff9c5deb0cd9', // farmland vista
+        'photo-1469474968028-56623f02e42e', // countryside
+        'photo-1500375592092-40eb2168fd21', // agricultural landscape
+        'photo-1482938289607-e9573fc25ebb' // rural scenery
       ]
     },
     {
       id: 'harvest',
-      name: 'Harvest Season',
-      description: 'Fresh produce from our farms',
-      preview: 'photo-1618160702438-9b02ab6515c9',
+      name: 'Crops & Harvest',
+      description: 'Coffee, maize, and fresh produce from our farms',
+      preview: 'photo-1447175008436-054170c2e979',
       images: [
-        'photo-1618160702438-9b02ab6515c9',
-        'photo-1465146344425-f00d5f5c8f07',
-        'photo-1518005020951-eccb494ad742',
-        'photo-1496307653780-42ee777d4833',
-        'photo-1721322800607-8c38375eef04',
-        'photo-1498936178812-4b2e558d2937'
+        'photo-1447175008436-054170c2e979', // coffee beans harvest
+        'photo-1571019613454-1cb2f99b2d8b', // coffee plantation
+        'photo-1574484284002-952d92456975', // corn/maize field
+        'photo-1618160702438-9b02ab6515c9', // harvest basket
+        'photo-1465146344425-f00d5f5c8f07', // fresh vegetables
+        'photo-1518005020951-eccb494ad742' // harvest scene
       ]
     }
   ];
