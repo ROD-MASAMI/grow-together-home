@@ -1,17 +1,21 @@
+
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
-import { Folder, FolderOpen } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { X } from 'lucide-react';
 
 const Gallery = () => {
   const [openFolder, setOpenFolder] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const folders = [
     {
       id: 'farming',
       name: 'Farm Life',
       description: 'Daily life on our sustainable farms',
+      preview: 'photo-1517022812141-23620dba5c23',
       images: [
         'photo-1517022812141-23620dba5c23',
         'photo-1466721591366-2d5fba72006d',
@@ -25,6 +29,7 @@ const Gallery = () => {
       id: 'animals',
       name: 'Farm Animals',
       description: 'Our beloved farm animals',
+      preview: 'photo-1582562124811-c09040d0a901',
       images: [
         'photo-1582562124811-c09040d0a901',
         'photo-1535268647677-300dbf3d78d1',
@@ -38,6 +43,7 @@ const Gallery = () => {
       id: 'landscapes',
       name: 'Farm Landscapes',
       description: 'Beautiful views from our fields',
+      preview: 'photo-1472396961693-142e6e269027',
       images: [
         'photo-1472396961693-142e6e269027',
         'photo-1433086966358-54859d0ed716',
@@ -51,6 +57,7 @@ const Gallery = () => {
       id: 'harvest',
       name: 'Harvest Season',
       description: 'Fresh produce from our farms',
+      preview: 'photo-1618160702438-9b02ab6515c9',
       images: [
         'photo-1618160702438-9b02ab6515c9',
         'photo-1465146344425-f00d5f5c8f07',
@@ -66,50 +73,58 @@ const Gallery = () => {
     setOpenFolder(openFolder === folderId ? null : folderId);
   };
 
+  const openImageDialog = (imageId: string) => {
+    setSelectedImage(imageId);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
-      
-      <div className="pt-20 pb-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Our Farm Gallery
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore the beauty of sustainable farming through our collection of images showcasing daily farm life, animals, and landscapes.
-            </p>
+      <div className="relative">
+        {/* Hero Section with Background Image */}
+        <div className="h-96 bg-cover bg-center bg-no-repeat relative" style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80")`
+        }}>
+          <Navbar />
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center text-white px-4">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+                Our Farm Gallery
+              </h1>
+              <p className="text-xl max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '200ms' }}>
+                Explore the beauty of sustainable farming through our collection of images
+              </p>
+            </div>
           </div>
-
+        </div>
+      </div>
+      
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Folder Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {folders.map((folder) => (
               <div key={folder.id} className="space-y-4">
-                {/* Folder Header */}
+                {/* Folder Header with Preview Image */}
                 <Card 
-                  className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  className="cursor-pointer hover:shadow-lg transition-all duration-300 hover:scale-105 overflow-hidden"
                   onClick={() => toggleFolder(folder.id)}
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="text-agrogreen-600 transition-transform duration-300">
-                        {openFolder === folder.id ? (
-                          <FolderOpen size={32} />
-                        ) : (
-                          <Folder size={32} />
-                        )}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-gray-900">
-                          {folder.name}
-                        </h3>
-                        <p className="text-gray-600">
-                          {folder.description}
-                        </p>
-                      </div>
+                  <div className="relative h-48">
+                    <img
+                      src={`https://images.unsplash.com/${folder.preview}?auto=format&fit=crop&q=80&w=600&h=300`}
+                      alt={folder.name}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-xl font-semibold mb-2">
+                        {folder.name}
+                      </h3>
+                      <p className="text-white/90 text-sm">
+                        {folder.description}
+                      </p>
                     </div>
-                  </CardContent>
+                  </div>
                 </Card>
 
                 {/* Folder Content */}
@@ -122,10 +137,11 @@ const Gallery = () => {
                     {folder.images.map((imageId, index) => (
                       <div 
                         key={imageId}
-                        className="aspect-square overflow-hidden rounded-lg group cursor-pointer"
+                        className="aspect-square overflow-hidden rounded-lg group cursor-pointer transform transition-all duration-300 hover:scale-105"
                         style={{
                           animationDelay: `${index * 100}ms`
                         }}
+                        onClick={() => openImageDialog(imageId)}
                       >
                         <img
                           src={`https://images.unsplash.com/${imageId}?auto=format&fit=crop&q=80&w=400&h=400`}
@@ -164,6 +180,25 @@ const Gallery = () => {
           </div>
         </div>
       </div>
+
+      {/* Image Dialog */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] p-0 overflow-hidden">
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 z-10 bg-black/50 hover:bg-black/70 text-white rounded-full p-2 transition-colors"
+          >
+            <X size={20} />
+          </button>
+          {selectedImage && (
+            <img
+              src={`https://images.unsplash.com/${selectedImage}?auto=format&fit=crop&q=80&w=1200&h=800`}
+              alt="Gallery image"
+              className="w-full h-auto max-h-[90vh] object-contain"
+            />
+          )}
+        </DialogContent>
+      </Dialog>
       
       <Footer />
     </div>
