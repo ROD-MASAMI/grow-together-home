@@ -12,9 +12,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">GreenAcres</h3>
+            <h3 className="text-xl font-bold mb-4">Kings Liquor</h3>
             <p className="text-gray-400 mb-4">
-              Sustainable farming practices for a greener future. We're committed to producing high-quality agricultural products while preserving our environment.
+              Sustainable farming practices for a greener future. We're committed to producing high-quality agricultural products while preserving our environment in Tanzania.
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" className="text-gray-400 hover:text-white transition-colors">
@@ -52,8 +52,8 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">Crop Production</li>
-              <li className="text-gray-400">Organic Farming</li>
+              <li className="text-gray-400">Coffee Production</li>
+              <li className="text-gray-400">Maize & Rice Farming</li>
               <li className="text-gray-400">Agricultural Consulting</li>
               <li className="text-gray-400">Farm Management</li>
             </ul>
@@ -65,15 +65,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin className="mr-2 h-5 w-5 text-agrogreen-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">123 Farm Road, Green Valley, CA 92345</span>
+                <span className="text-gray-400">Dar es Salaam, Tanzania</span>
               </li>
               <li className="flex items-center">
                 <Phone className="mr-2 h-5 w-5 text-agrogreen-400 flex-shrink-0" />
-                <span className="text-gray-400">(555) 123-4567</span>
+                <span className="text-gray-400">+255 716 852 420</span>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-2 h-5 w-5 text-agrogreen-400 flex-shrink-0" />
-                <span className="text-gray-400">info@greenacres.com</span>
+                <span className="text-gray-400">agrofarming@kings.co.tz</span>
               </li>
             </ul>
           </div>
@@ -82,7 +82,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              &copy; {currentYear} GreenAcres. All rights reserved.
+              &copy; {currentYear} Kings Liquor. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6">
