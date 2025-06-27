@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        TARGET_DIR = '/Users/rmasami/Documents/learning'
+        TARGET_DIR = '/learning'
         REPO_URL = 'https://github.com/ROD-MASAMI/grow-together-home'
     }
 
