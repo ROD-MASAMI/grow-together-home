@@ -4,7 +4,6 @@ pipeline {
     environment {
         BASE_DIR = '/learning'
         PROJECT_NAME = 'grow-together-home'
-        TARGET_DIR = ${BASE_DIR}/${PROJECT_NAME}
         REPO_URL = 'https://github.com/ROD-MASAMI/grow-together-home'
     }
 
@@ -12,9 +11,9 @@ pipeline {
         stage('Prepare Code') {
             steps {
                 sh '''
-                    if [ -d "$TARGET_DIR/.git" ]; then
+                    if [ -d "$BASE_DIR/$PROJECT_NAME/.git" ]; then
                         echo "Repo exists, pulling latest changes..."
-                        cd $TARGET_DIR
+                        cd $BASE_DIR/$PROJECT_NAME
                         git pull origin main
                     else
                         echo "Cloning repo for the first time..."
