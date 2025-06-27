@@ -27,25 +27,25 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                dir("${env.BASE_DIR}") {
+
                     sh 'npm install'
-                }
+
             }
         }
 
         stage('Build') {
             steps {
-                dir("${env.BASE_DIR}") {
+
                     sh 'npm run build'
-                }
+
             }
         }
 
         stage('Run App') {
             steps {
-                dir("${env.BASE_DIR}") {
+
                     sh 'npm run start'
-                }
+
             }
         }
     }
